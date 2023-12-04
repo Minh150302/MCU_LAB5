@@ -9,11 +9,11 @@
 
 
 void Clear_Led(){
-	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
-	HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, RESET);
-	HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, RESET);
-	HAL_GPIO_WritePin(LED_RED3_GPIO_Port, LED_RED3_Pin, RESET);
-	HAL_GPIO_WritePin(LED_RED4_GPIO_Port, LED_RED4_Pin, RESET);
+	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+	HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, SET);
+	HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, SET);
+	HAL_GPIO_WritePin(LED_RED3_GPIO_Port, LED_RED3_Pin, SET);
+	HAL_GPIO_WritePin(LED_RED4_GPIO_Port, LED_RED4_Pin, SET);
 }
 
 void Led_Display(void){

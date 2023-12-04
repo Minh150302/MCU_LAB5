@@ -128,13 +128,12 @@ uint32_t SCH_Add_Task(void (*pFunction)(), uint32_t DELAY, uint32_t PERIOD) {
 
 
 uint8_t SCH_Delete_Task(uint32_t taskID) {
-	uint8_t j;
     for (uint8_t i = 0; i < SCH_MAX_TASKS; i++) {
         if (SCH_tasks_G[i].TaskID == taskID) {
             for (uint8_t j = i; j < SCH_MAX_TASKS; j++) {
                 SCH_tasks_G[j] = SCH_tasks_G[j + 1];
             }
-            SCH_tasks_G[j].pTask = NULL;
+            SCH_tasks_G[j].pTask = 0;
     		SCH_tasks_G[j].Period = 0;
     		SCH_tasks_G[j].Delay = 0;
     		SCH_tasks_G[j].RunMe = 0;
