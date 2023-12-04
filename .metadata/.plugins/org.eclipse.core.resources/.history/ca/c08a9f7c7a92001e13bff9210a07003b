@@ -1,0 +1,22 @@
+/*
+ * shedule.h
+ *
+ *  Created on: Dec 4, 2023
+ *      Author: Huy Minh
+ */
+
+#ifndef INC_SHEDULE_H_
+#define INC_SHEDULE_H_
+
+#include "global.h"
+
+
+
+
+void SCH_Init();
+void SCH_Add_Task();
+void SCH_Update();
+void SCH_Dispatch_Tasks();
+
+
+#endif /* INC_SHEDULE_H_ */
