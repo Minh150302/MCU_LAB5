@@ -17,6 +17,8 @@ void Led_Display3(void);
 void Led_Display4(void);
 
 
+void Clear_Led();
+
 
 
 

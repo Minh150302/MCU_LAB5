@@ -7,6 +7,8 @@
 
 #include "schedule.h"
 
+const int DELAY_TASK = 2;		//each task has 20ms delay
+const int DELAY_DEFAULT = 10; 	//for init delay
 
 void SCH_Update(void) {
     for (uint32_t i = 0; i < SCH_MAX_TASKS; i++) {
@@ -33,7 +35,7 @@ uint32_t SCH_Add_Task(void (*pFunction)(), uint32_t DELAY, uint32_t PERIOD) {
     for (uint32_t i = 0; i < SCH_MAX_TASKS; i++) {
         if (SCH_tasks_G[i].pTask == NULL) {
             SCH_tasks_G[i].pTask = pFunction;
-            SCH_tasks_G[i].Delay = DELAY;
+            SCH_tasks_G[i].Delay = DELAY_DEFAULT + DELAY + DELAY_TASK*i;
             SCH_tasks_G[i].Period = PERIOD / TICK;
             SCH_tasks_G[i].RunMe = 0;
             SCH_tasks_G[i].TaskID = i + 1; // id start from 1

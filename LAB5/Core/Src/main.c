@@ -96,7 +96,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  SCH_Add_Task(Led_Display, 10, 1000);
+
+//  Clear_Led();
+
+  SCH_Add_Task(Led_Display1, 0, 500);
+  SCH_Add_Task(Led_Display2, 0, 1000);
+  SCH_Add_Task(Led_Display3, 0, 1500);
+  SCH_Add_Task(Led_Display4, 0, 2000);
+  SCH_Add_Task(Led_Display, 0, 2500);
+
   while (1)
   {
 	  SCH_Dispatch_Tasks();
@@ -200,10 +208,13 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_RED1_Pin|LED_RED2_Pin|LED_RED3_Pin|LED_RED4_Pin
+                          |LED_RED_Pin|LED_YELLOW_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin */
-  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin;
+  /*Configure GPIO pins : LED_RED1_Pin LED_RED2_Pin LED_RED3_Pin LED_RED4_Pin
+                           LED_RED_Pin LED_YELLOW_Pin */
+  GPIO_InitStruct.Pin = LED_RED1_Pin|LED_RED2_Pin|LED_RED3_Pin|LED_RED4_Pin
+                          |LED_RED_Pin|LED_YELLOW_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

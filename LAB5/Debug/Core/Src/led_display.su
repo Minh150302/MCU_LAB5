@@ -1,2 +1,6 @@
-led_display.c:10:6:Led_Display	8	static
-led_display.c:16:6:Led_Display1	4	static
+led_display.c:11:6:Clear_Led	8	static
+led_display.c:19:6:Led_Display	8	static
+led_display.c:24:6:Led_Display1	8	static
+led_display.c:28:6:Led_Display2	8	static
+led_display.c:32:6:Led_Display3	8	static
+led_display.c:36:6:Led_Display4	8	static

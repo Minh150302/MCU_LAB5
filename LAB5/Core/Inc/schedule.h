@@ -29,6 +29,7 @@ typedef struct {
 #define	NO_TASK_ID				0
 sTask SCH_tasks_G[SCH_MAX_TASKS];
 
+const int DELAY_TASK;
 
 
 void SCH_Update(void);
